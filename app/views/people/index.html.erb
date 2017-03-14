@@ -1,0 +1,23 @@
+<%= link_to 'Add Person', new_person_path %>
+<h1>People</h1>
+
+<table>
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Show</th>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.age %></td>
+        <td>
+            <%= link_to 'Show', person_path(person) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

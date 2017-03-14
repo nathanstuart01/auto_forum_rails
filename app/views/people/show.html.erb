@@ -1,0 +1,14 @@
+<%= link_to 'Back', people_path %>
+<h1><%= @person.first_name %></h1>
+<h3><%= @person.last_name %></h3>
+<p><%= @person.first_name %> is <%= @person.age %>
+
+  <% if @person.age > 31 %>
+    <p>This person should see a doctor</p>
+  <% else %>
+  <p> This person is indestructible</p>
+
+  <% end %>
+
+<%= link_to 'Edit Person', edit_person_path(@person) %>
+<%= link_to 'Delete', person_path(@person), method: :delete %>
